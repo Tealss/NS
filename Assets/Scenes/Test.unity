@@ -12621,7 +12621,19 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8212191660514667820, guid: 4b918959c3a209c4da25f041d4dac7ab,
     type: 3}
   spwanTime: 0.5
-  wayPoints: []
+  wayPoints:
+  - {fileID: 160507055}
+  - {fileID: 1279138226}
+  - {fileID: 670206785}
+  - {fileID: 1490493378}
+  - {fileID: 43576903}
+  - {fileID: 497991999}
+  - {fileID: 1593058767}
+  - {fileID: 2109010977}
+  - {fileID: 25412937}
+  - {fileID: 984561369}
+  - {fileID: 1741194614}
+  - {fileID: 731576883}
 --- !u!4 &1519829476
 Transform:
   m_ObjectHideFlags: 0
