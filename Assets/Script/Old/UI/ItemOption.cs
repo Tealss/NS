@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class ItemOption : MonoBehaviour
     public GameObject popupWindow;
     private bool isPopupActive = false;
     public bool isOption = false;
+    
 
 
     public void OnPointerEnter()
