@@ -10,9 +10,14 @@ public class EnemySpawn : MonoBehaviour
     private float spwanTime;
     [SerializeField]
     private Transform[] wayPoints;
+    private List<Enemy> enemyList;
+
+    public List<Enemy> EnemyList => enemyList; 
 
     private void Awake()
     {
+        enemyList = new List<Enemy>();
+
         StartCoroutine("SpawnEnemy");
     }
 
@@ -23,14 +28,16 @@ public class EnemySpawn : MonoBehaviour
             GameObject clone = Instantiate(enemyPrefab);
             Enemy enemy = clone.GetComponent<Enemy>();
 
-            enemy.Setup(wayPoints);
+            enemy.Setup(this,wayPoints);
+            enemyList.Add(enemy);
             yield return new WaitForSeconds(spwanTime);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DestroyEnemy(Enemy enemy)
     {
-        
+        enemyList.Remove(enemy);
+        Destroy(enemy.gameObject);
     }
+  
 }

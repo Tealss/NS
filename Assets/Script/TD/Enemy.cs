@@ -8,11 +8,13 @@ public class Enemy : MonoBehaviour
     private Transform[] wayPoints;
     private int currentIndex = 0;
     private MovementTD MovementTD;
+    private EnemySpawn enemySpawn;
 
     
-    public void Setup(Transform[] wayPoints)
+    public void Setup(EnemySpawn enemyspawn, Transform[] wayPoints)
     {
         MovementTD = GetComponent<MovementTD>();
+        this.enemySpawn = enemyspawn;
 
         wayPointCount = wayPoints.Length;
         this.wayPoints = new Transform[wayPointCount];
@@ -53,13 +55,13 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Ondie();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Ondie()
     {
-        
+        enemySpawn.DestroyEnemy(this);
     }
 }
