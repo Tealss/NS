@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyDestroyType { Kill = 0, Arrive}
 public class Enemy : MonoBehaviour
 {
     private int wayPointCount;
@@ -56,12 +57,12 @@ public class Enemy : MonoBehaviour
         else
         {
             //Destroy(gameObject);
-            Ondie();
+            Ondie(EnemyDestroyType.Arrive);
         }
     }
 
-    public void Ondie()
+    public void Ondie(EnemyDestroyType type)
     {
-        enemySpawn.DestroyEnemy(this);
+        enemySpawn.DestroyEnemy(type, this);
     }
 }

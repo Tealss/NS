@@ -7,6 +7,8 @@ public class TowerSpawn : MonoBehaviour
 {
     [SerializeField]
     private GameObject towerPrefab;
+    [SerializeField]
+    private EnemySpawn enemySpawn;
 
     public void SpawnTower(Transform tileTransform)
     {
@@ -17,6 +19,7 @@ public class TowerSpawn : MonoBehaviour
             return;
         }
         tile.IsBuildTower = true;
-        Instantiate(towerPrefab, tileTransform.position, Quaternion.identity) ;
+        GameObject clone = Instantiate(towerPrefab, tileTransform.position, Quaternion.identity);
+        clone.GetComponent<TowerWeapon>().Setup(enemySpawn);
     }
 }

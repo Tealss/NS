@@ -7,6 +7,6 @@ public class Scenes : MonoBehaviour
 {
     public void ChangeToScene()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("TD");
     }
 }
